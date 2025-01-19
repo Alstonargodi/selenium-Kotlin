@@ -1,3 +1,4 @@
+import org.openqa.selenium.By
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.firefox.FirefoxDriver
@@ -15,7 +16,12 @@ class test {
 
     @Test
     fun openBrowser(){
-//        driver.get("https://www.selenium.dev/selenium/web/web-form.html")
-        driver.get("https://www.google.com")
+        driver.get("https://www.selenium.dev/selenium/web/web-form.html")
+
+        val title = driver.title
+        println(title)
+
+        var textBox = driver.findElement(By.name("my-text"))
+        textBox.sendKeys("aaa")
     }
 }
